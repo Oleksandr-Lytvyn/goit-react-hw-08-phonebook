@@ -1,14 +1,13 @@
 import { InputForm } from './InputForm/InputForm';
 import { ContactList } from './ContactList/ContactList';
-import { Auth } from './Auth/Auth';
+import { AppBar } from './AppBar/AppBar';
 
 export function App() {
   return (
     <section>
-      <h1>Phonebook</h1>
-      <Auth />
-      <InputForm />
-      <ContactList />
+      <AppBar />
+      {/* <InputForm /> */}
+      {/* <ContactList /> */}
     </section>
   );
 }
