@@ -6,6 +6,7 @@ import { addFilter } from '../../redux/filterSlice';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 import { ContactListWrap } from './ContactsList.styled';
+import { InputForm } from 'components/InputForm/InputForm';
 
 export function ContactList() {
   const cont = useSelector(state => state.contacts);
@@ -39,6 +40,7 @@ export function ContactList() {
           />
           {isLoading && <b>Loading contacts...</b>}
           {error && <b>{error}</b>}
+          <InputForm />
           <ul className={'contacts_list'}>
             {filteredContacts.map(cont => (
               <li key={cont.id} className={'contacts_item'}>

@@ -8,7 +8,7 @@ export function AppBar() {
   return (
     <>
       {isLogged ? <HomeNav /> : <AuthNav />}
-      <ContactList />
+      {isLogged && <ContactList />}
     </>
   );
 }
