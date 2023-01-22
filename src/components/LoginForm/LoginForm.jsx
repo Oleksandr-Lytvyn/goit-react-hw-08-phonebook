@@ -1,16 +1,15 @@
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/Auth/auth-operations';
+import { logIn } from 'redux/Auth/auth-operations';
 
-export function RegistrationForm({ isModal }) {
+export function LoginForm({ isModal }) {
   const dispatch = useDispatch();
   function onSubmit(event) {
     event.preventDefault();
-    isModal(false);
     console.log(event.target.email.value);
     console.log(event.target.password.value);
+    isModal(false);
     dispatch(
-      register({
-        name: event.target.name.value,
+      logIn({
         email: event.target.email.value,
         password: event.target.password.value,
       })
@@ -20,15 +19,12 @@ export function RegistrationForm({ isModal }) {
     <>
       <form action="" onSubmit={onSubmit}>
         <label htmlFor="">
-          <input type="text" name="name" /> name
-        </label>
-        <label htmlFor="">
           <input type="text" name="email" /> email
         </label>
         <label htmlFor="">
           <input type="text" name="password" /> password
         </label>
-        <button type="submit">register</button>
+        <button type="submit">login</button>
       </form>
     </>
   );

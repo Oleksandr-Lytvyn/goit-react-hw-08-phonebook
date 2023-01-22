@@ -1,10 +1,11 @@
-import css from './ContactList.module.css';
+// import css from './ContactList.module.css';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/operations';
 import { addFilter } from '../../redux/filterSlice';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
+import { ContactListWrap } from './ContactsList.styled';
 
 export function ContactList() {
   const cont = useSelector(state => state.contacts);
@@ -26,37 +27,39 @@ export function ContactList() {
   );
   return (
     <>
-      <div className={css.contacts_section}>
-        <h2>Contacts list</h2>
-        <input
-          type="text"
-          name="filter"
-          onInput={event => {
-            dispatch(addFilter(event.target.value));
-          }}
-        />
-        {isLoading && <b>Loading contacts...</b>}
-        {error && <b>{error}</b>}
-        <ul className={css.contacts_list}>
-          {filteredContacts.map(cont => (
-            <li key={cont.id} className={css.contacts_item}>
-              <span>
-                {cont.name}: {cont.phone}
-              </span>
-              <button
-                id={cont.id}
-                className={css.btn_contact}
-                type="button"
-                onClick={submit => {
-                  delCont(submit);
-                }}
-              >
-                delete
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ContactListWrap>
+        <div className={'contacts_section'}>
+          <h2>Contacts list</h2>
+          <input
+            type="text"
+            name="filter"
+            onInput={event => {
+              dispatch(addFilter(event.target.value));
+            }}
+          />
+          {isLoading && <b>Loading contacts...</b>}
+          {error && <b>{error}</b>}
+          <ul className={'contacts_list'}>
+            {filteredContacts.map(cont => (
+              <li key={cont.id} className={'contacts_item'}>
+                <span>
+                  {cont.name}: {cont.phone}
+                </span>
+                <button
+                  id={cont.id}
+                  className={'btn_contact'}
+                  type="button"
+                  onClick={submit => {
+                    delCont(submit);
+                  }}
+                >
+                  delete
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </ContactListWrap>
     </>
   );
 }
