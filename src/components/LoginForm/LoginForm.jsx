@@ -5,8 +5,6 @@ export function LoginForm({ isModal }) {
   const dispatch = useDispatch();
   function onSubmit(event) {
     event.preventDefault();
-    console.log(event.target.email.value);
-    console.log(event.target.password.value);
     isModal(false);
     dispatch(
       logIn({

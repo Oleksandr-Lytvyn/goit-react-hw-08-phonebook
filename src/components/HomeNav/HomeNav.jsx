@@ -6,6 +6,7 @@ import pic from '../../images/user.jpg';
 export function HomeNav() {
   const name = useSelector(state => state.auth.user.name);
   const dispatch = useDispatch();
+
   function onClick() {
     dispatch(logOut());
   }

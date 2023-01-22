@@ -45,7 +45,7 @@ export function ContactList() {
             {filteredContacts.map(cont => (
               <li key={cont.id} className={'contacts_item'}>
                 <span>
-                  {cont.name}: {cont.phone}
+                  {cont.name}: {cont.number}
                 </span>
                 <button
                   id={cont.id}
