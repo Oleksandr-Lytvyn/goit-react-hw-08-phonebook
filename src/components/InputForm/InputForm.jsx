@@ -3,10 +3,10 @@ import { addContact } from '../../redux/operations';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
-export function InputForm() {
+export const InputForm = () => {
   const dispatch = useDispatch();
   const contactList = useSelector(state => state.contacts.data);
-  function onSubmit(event) {
+  const onSubmit = event => {
     const newCont = {
       name: event.target.elements.name.value,
       number: event.target.elements.number.value,
@@ -16,7 +16,7 @@ export function InputForm() {
       return;
     }
     dispatch(addContact(newCont));
-  }
+  };
   return (
     <form
       onSubmit={event => {
@@ -50,4 +50,4 @@ export function InputForm() {
       <button>add contact</button>
     </form>
   );
-}
+};

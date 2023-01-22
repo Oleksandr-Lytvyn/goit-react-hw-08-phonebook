@@ -8,7 +8,7 @@ import { fetchContacts } from 'redux/operations';
 import { ContactListWrap } from './ContactsList.styled';
 import { InputForm } from 'components/InputForm/InputForm';
 
-export function ContactList() {
+export const ContactList = () => {
   const cont = useSelector(state => state.contacts);
   const fltr = useSelector(state => state.filter);
   const isLoading = useSelector(state => state.contacts.isLoading);
@@ -19,9 +19,9 @@ export function ContactList() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  function delCont(submit) {
+  const delCont = submit => {
     dispatch(deleteContact(submit.target.id));
-  }
+  };
 
   const filteredContacts = cont.data.filter(cont =>
     cont.name.toLowerCase().includes(fltr.toLowerCase())
@@ -64,4 +64,4 @@ export function ContactList() {
       </ContactListWrap>
     </>
   );
-}
+};

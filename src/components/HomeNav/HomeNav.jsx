@@ -2,18 +2,19 @@
 import { logOut } from 'redux/Auth/auth-operations';
 import { useDispatch, useSelector } from 'react-redux';
 import pic from '../../images/user.jpg';
+import { HomeNavStyled } from './HomeNav.styled';
 
-export function HomeNav() {
+export const HomeNav = () => {
   const name = useSelector(state => state.auth.user.name);
   const dispatch = useDispatch();
 
-  function onClick() {
+  const onClick = () => {
     dispatch(logOut());
-  }
+  };
 
   return (
     <>
-      <div>
+      <HomeNavStyled>
         <img
           src={pic}
           alt="user pic"
@@ -23,7 +24,7 @@ export function HomeNav() {
         <button type="button" onClick={onClick}>
           log out
         </button>
-      </div>
+      </HomeNavStyled>
     </>
   );
-}
+};

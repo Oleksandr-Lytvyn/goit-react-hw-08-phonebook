@@ -3,7 +3,7 @@ import { Modal } from 'components/Modal/Modal';
 import { RegistrationForm } from 'components/RegistrationForm/RegistrationForm';
 import { useState } from 'react';
 
-export function AuthNav() {
+export const AuthNav = () => {
   const [isModal, setIsModal] = useState(false);
   const [isReg, setIsReg] = useState(false);
   const [isLog, setIsLog] = useState(false);
@@ -50,4 +50,4 @@ export function AuthNav() {
       )}
     </>
   );
-}
+};

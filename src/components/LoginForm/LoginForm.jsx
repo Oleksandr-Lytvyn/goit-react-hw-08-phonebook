@@ -1,9 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/Auth/auth-operations';
 
-export function LoginForm({ isModal }) {
+export const LoginForm = ({ isModal }) => {
   const dispatch = useDispatch();
-  function onSubmit(event) {
+  const onSubmit = event => {
     event.preventDefault();
     isModal(false);
     dispatch(
@@ -12,7 +12,7 @@ export function LoginForm({ isModal }) {
         password: event.target.password.value,
       })
     );
-  }
+  };
   return (
     <>
       <form action="" onSubmit={onSubmit}>
@@ -26,4 +26,4 @@ export function LoginForm({ isModal }) {
       </form>
     </>
   );
-}
+};
