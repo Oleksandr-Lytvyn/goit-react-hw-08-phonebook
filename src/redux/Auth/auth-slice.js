@@ -20,10 +20,16 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
+      .addCase(register.rejected, () => {
+        alert(`something wrong`);
+      })
       .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+      })
+      .addCase(logIn.rejected, () => {
+        alert(`user not found`);
       })
       .addCase(logOut.fulfilled, (state, action) => {
         state.user = { name: null, email: null };

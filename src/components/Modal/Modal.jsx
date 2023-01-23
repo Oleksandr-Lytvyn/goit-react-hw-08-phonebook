@@ -1,15 +1,18 @@
+import css from './Modal.module.css';
+
 export const Modal = ({ onClick, children }) => {
   return (
-    <div>
-      {children}
+    <div className={css.modal}>
       <button
+        className={css.close}
         onClick={() => {
           onClick(false);
           console.log('click');
         }}
       >
-        close!
+        X
       </button>
+      {children}
     </div>
   );
 };

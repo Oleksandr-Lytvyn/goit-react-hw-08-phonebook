@@ -2,6 +2,7 @@ import { LoginForm } from 'components/LoginForm/LoginForm';
 import { Modal } from 'components/Modal/Modal';
 import { RegistrationForm } from 'components/RegistrationForm/RegistrationForm';
 import { useState } from 'react';
+import css from './AuthNav.module.css';
 
 export const AuthNav = () => {
   const [isModal, setIsModal] = useState(false);
@@ -22,7 +23,7 @@ export const AuthNav = () => {
 
   return (
     <>
-      <div>
+      <div className={css.buttons}>
         <button
           id="1"
           type="button"

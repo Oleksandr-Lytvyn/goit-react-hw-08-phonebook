@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppBar } from './AppBar/AppBar';
 import { refreshUser } from 'redux/Auth/auth-operations';
+import { Layout } from './Layout';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,9 @@ export const App = () => {
   return (
     !isRefreshing && (
       <section>
-        <AppBar />
+        <Layout>
+          <AppBar />
+        </Layout>
       </section>
     )
   );

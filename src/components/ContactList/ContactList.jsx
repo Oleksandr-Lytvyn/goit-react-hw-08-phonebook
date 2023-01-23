@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 import { ContactListWrap } from './ContactsList.styled';
 import { InputForm } from 'components/InputForm/InputForm';
+import css from './ContactList.module.css';
 
 export const ContactList = () => {
   const cont = useSelector(state => state.contacts);
@@ -29,18 +30,20 @@ export const ContactList = () => {
   return (
     <>
       <ContactListWrap>
-        <div className={'contacts_section'}>
-          <h2>Contacts list</h2>
-          <input
-            type="text"
-            name="filter"
-            onInput={event => {
-              dispatch(addFilter(event.target.value));
-            }}
-          />
+        <div className={css.contacts_section}>
+          <div className={css.filter_section}>
+            <h2>filter</h2>
+            <input
+              type="text"
+              name="filter"
+              onInput={event => {
+                dispatch(addFilter(event.target.value));
+              }}
+            />
+          </div>
+          <InputForm />
           {isLoading && <b>Loading contacts...</b>}
           {error && <b>{error}</b>}
-          <InputForm />
           <ul className={'contacts_list'}>
             {filteredContacts.map(cont => (
               <li key={cont.id} className={'contacts_item'}>
@@ -55,7 +58,7 @@ export const ContactList = () => {
                     delCont(submit);
                   }}
                 >
-                  delete
+                  X
                 </button>
               </li>
             ))}
