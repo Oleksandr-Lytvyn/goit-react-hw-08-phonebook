@@ -1,4 +1,4 @@
-.login_form {
+.reg_form {
   margin-top: 50px;
   margin-bottom: 15px;
   display: flex;
@@ -7,6 +7,6 @@
   gap: 30px;
 }
 
-.button_login {
+.button_reg {
   margin-top: 50px;
 }

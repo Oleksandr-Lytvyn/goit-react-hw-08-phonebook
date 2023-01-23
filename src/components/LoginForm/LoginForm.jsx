@@ -16,14 +16,16 @@ export const LoginForm = ({ isModal }) => {
   };
   return (
     <>
-      <form action="" onSubmit={onSubmit}>
+      <form className={css.login_form} action="" onSubmit={onSubmit}>
         <label htmlFor="">
-          <input type="text" name="email" /> email
+          <input type="text" name="email" placeholder="email" required />
         </label>
         <label htmlFor="">
-          <input type="text" name="password" /> password
+          <input type="text" name="password" placeholder="password" required />
         </label>
-        <button type="submit">login</button>
+        <button className={css.button_login} type="submit">
+          login
+        </button>
       </form>
     </>
   );

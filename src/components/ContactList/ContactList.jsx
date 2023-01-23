@@ -5,7 +5,7 @@ import { deleteContact } from '../../redux/operations';
 import { addFilter } from '../../redux/filterSlice';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
-import { ContactListWrap } from './ContactsList.styled';
+// import { ContactListWrap } from './ContactsList.styled';
 import { InputForm } from 'components/InputForm/InputForm';
 import css from './ContactList.module.css';
 
@@ -29,42 +29,43 @@ export const ContactList = () => {
   );
   return (
     <>
-      <ContactListWrap>
-        <div className={css.contacts_section}>
-          <div className={css.filter_section}>
-            <h2>filter</h2>
-            <input
-              type="text"
-              name="filter"
-              onInput={event => {
-                dispatch(addFilter(event.target.value));
-              }}
-            />
-          </div>
-          <InputForm />
-          {isLoading && <b>Loading contacts...</b>}
-          {error && <b>{error}</b>}
-          <ul className={'contacts_list'}>
-            {filteredContacts.map(cont => (
-              <li key={cont.id} className={'contacts_item'}>
-                <span>
-                  {cont.name}: {cont.number}
-                </span>
-                <button
-                  id={cont.id}
-                  className={'btn_contact'}
-                  type="button"
-                  onClick={submit => {
-                    delCont(submit);
-                  }}
-                >
-                  X
-                </button>
-              </li>
-            ))}
-          </ul>
+      {/* <ContactListWrap> */}
+      <div className={css.contacts_section}>
+        <InputForm />
+        <div className={css.filter_section}>
+          <h2>filter</h2>
+          <input
+            type="text"
+            name="filter"
+            placeholder="search name"
+            onInput={event => {
+              dispatch(addFilter(event.target.value));
+            }}
+          />
         </div>
-      </ContactListWrap>
+        {isLoading && <b>Loading contacts...</b>}
+        {error && <b>{error}</b>}
+        <ul className={css.contacts_list}>
+          {filteredContacts.map(cont => (
+            <li key={cont.id} className={css.contacts_item}>
+              <span>
+                {cont.name}: {cont.number}
+              </span>
+              <button
+                id={cont.id}
+                className={css.btn_contact}
+                type="button"
+                onClick={submit => {
+                  delCont(submit);
+                }}
+              >
+                X
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {/* </ContactListWrap> */}
     </>
   );
 };

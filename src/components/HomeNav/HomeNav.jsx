@@ -2,7 +2,6 @@
 import { logOut } from 'redux/Auth/auth-operations';
 import { useDispatch, useSelector } from 'react-redux';
 import pic from '../../images/user.jpg';
-import { HomeNavStyled } from './HomeNav.styled';
 import css from './HomeNav.module.css';
 
 export const HomeNav = () => {
@@ -23,7 +22,7 @@ export const HomeNav = () => {
             style={{ width: '35px', height: '35px' }}
           />
         </div>
-        <p>{name}</p>
+        <p>Hello, {name}</p>
         <button type="button" onClick={onClick}>
           log out
         </button>

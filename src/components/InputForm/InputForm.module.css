@@ -1,5 +1,15 @@
-.inputs {
+.form_wraper {
+  background-color: rgb(200, 214, 243);
+  align-items: start;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.form_inputs {
   display: flex;
   gap: 10px;
-  margin-bottom: 10px;
+}
+
+.button_form {
+  width: 100px;
 }

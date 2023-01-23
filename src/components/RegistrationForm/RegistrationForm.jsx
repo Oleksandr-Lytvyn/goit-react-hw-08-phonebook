@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/Auth/auth-operations';
+import css from './RegistrationForm.module.css';
 
 export const RegistrationForm = ({ isModal }) => {
   const dispatch = useDispatch();
@@ -16,17 +17,19 @@ export const RegistrationForm = ({ isModal }) => {
   };
   return (
     <>
-      <form action="" onSubmit={onSubmit}>
+      <form className={css.reg_form} action="" onSubmit={onSubmit}>
         <label htmlFor="">
-          <input type="text" name="name" /> name
+          <input type="text" name="name" placeholder="name" required />
         </label>
         <label htmlFor="">
-          <input type="text" name="email" /> email
+          <input type="text" name="email" placeholder="email" required />
         </label>
         <label htmlFor="">
-          <input type="text" name="password" /> password
+          <input type="text" name="password" placeholder="password" required />
         </label>
-        <button type="submit">register</button>
+        <button className={css.button_reg} type="submit">
+          register
+        </button>
       </form>
     </>
   );
