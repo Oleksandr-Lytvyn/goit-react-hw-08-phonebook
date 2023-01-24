@@ -31,13 +31,12 @@ const authSlice = createSlice({
       .addCase(logIn.rejected, () => {
         alert(`user not found`);
       })
-      .addCase(logOut.fulfilled, (state, action) => {
+      .addCase(logOut.fulfilled, state => {
         state.user = { name: null, email: null };
         state.token = null;
         state.isLoggedIn = false;
       })
-      .addCase(refreshUser.fulfilled, (state, action) => {
-        // state.user = action.payload;
+      .addCase(refreshUser.fulfilled, state => {
         state.isLoggedIn = true;
       })
       .addMatcher(
