@@ -25,6 +25,14 @@ export const UserNav = () => {
           />
         </div>
         <p>Hello, {name}</p>
+        <button
+          type="button"
+          onClick={() => {
+            navigate('/');
+          }}
+        >
+          home
+        </button>
         <button type="button" onClick={onClick}>
           log out
         </button>
