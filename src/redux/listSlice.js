@@ -1,4 +1,3 @@
-// import { nanoid } from 'nanoid';
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchContacts, deleteContact, addContact } from './operations';
 

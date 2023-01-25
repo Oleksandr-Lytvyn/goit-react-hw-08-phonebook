@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { Navigation } from './Navigation/Navigation';
 
 export const Layout = ({ children }) => {
   return (
@@ -13,6 +14,7 @@ export const Layout = ({ children }) => {
         }}
       >
         {children}
+        <Navigation />
         <Outlet />
       </div>
     </>

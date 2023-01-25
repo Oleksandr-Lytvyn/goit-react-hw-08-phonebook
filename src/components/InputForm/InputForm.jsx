@@ -30,7 +30,6 @@ export const InputForm = () => {
         <h2>add contact</h2>
         <div className={css.form_inputs}>
           <div>
-            {/* <h2>Name</h2> */}
             <input
               type="text"
               name="name"
@@ -41,7 +40,6 @@ export const InputForm = () => {
             />
           </div>
           <div>
-            {/* <h2>tel</h2> */}
             <input
               type="tel"
               name="number"

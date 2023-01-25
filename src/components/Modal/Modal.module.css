@@ -1,10 +1,9 @@
 .modal {
-  width: 200px;
-  /* height: 400px; */
+  /* width: 200px;
   position: fixed;
   transform: translate(-50%, -50%);
   top: 50%;
-  left: 50%;
+  left: 50%; */
   background-color: rgb(177, 191, 208);
   border-radius: 5px;
 }

@@ -1,11 +1,9 @@
-// import css from './ContactList.module.css';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/operations';
 import { addFilter } from '../../redux/filterSlice';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
-// import { ContactListWrap } from './ContactsList.styled';
 import { InputForm } from 'components/InputForm/InputForm';
 import css from './ContactList.module.css';
 
@@ -29,7 +27,6 @@ export const ContactList = () => {
   );
   return (
     <>
-      {/* <ContactListWrap> */}
       <div className={css.contacts_section}>
         <InputForm />
         <div className={css.filter_section}>
@@ -65,7 +62,6 @@ export const ContactList = () => {
           ))}
         </ul>
       </div>
-      {/* </ContactListWrap> */}
     </>
   );
 };

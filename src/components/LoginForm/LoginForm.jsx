@@ -1,12 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/Auth/auth-operations';
 import css from './LoginForm.module.css';
 
 export const LoginForm = ({ isModal }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const onSubmit = event => {
     event.preventDefault();
-    isModal(false);
+    navigate('/contacts');
+
     dispatch(
       logIn({
         email: event.target.email.value,
