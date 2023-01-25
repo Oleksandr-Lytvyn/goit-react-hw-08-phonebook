@@ -14,9 +14,9 @@ export const ContactList = () => {
   const error = useSelector(state => state.contacts.error);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   const delCont = submit => {
     dispatch(deleteContact(submit.target.id));
