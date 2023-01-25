@@ -2,8 +2,8 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/operations';
 import { addFilter } from '../../redux/filterSlice';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+// import { useEffect } from 'react';
+// import { fetchContacts } from 'redux/operations';
 import { InputForm } from 'components/InputForm/InputForm';
 import css from './ContactList.module.css';
 
