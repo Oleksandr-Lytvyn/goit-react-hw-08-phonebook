@@ -48,7 +48,7 @@ export const AuthNav = () => {
         </button>
       </div>
       {isModal && (
-        <Modal onClick={setIsModal}>
+        <Modal>
           {isReg && <RegistrationForm isModal={setIsModal} />}
           {isLog && <LoginForm isModal={setIsModal} />}
         </Modal>

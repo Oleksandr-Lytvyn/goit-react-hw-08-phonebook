@@ -1,6 +1,6 @@
 import css from './Modal.module.css';
 
-export const Modal = ({ onClick, children }) => {
+export const Modal = ({ children }) => {
   return (
     <div className={css.modal}>
       {/* <button
