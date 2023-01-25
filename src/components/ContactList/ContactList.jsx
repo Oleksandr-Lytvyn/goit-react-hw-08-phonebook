@@ -41,6 +41,7 @@ export const ContactList = () => {
           />
         </div>
         {isLoading && <b>Loading contacts...</b>}
+        {filteredContacts.length === 0 && <b>No contacts...</b>}
         {error && <b>{error}</b>}
         <ul className={css.contacts_list}>
           {filteredContacts.map(cont => (

@@ -3,13 +3,13 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/Auth/auth-operations';
 import css from './LoginForm.module.css';
 
-export const LoginForm = ({ isModal }) => {
+export const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onSubmit = event => {
     event.preventDefault();
-    navigate('/contacts');
+    navigate('/');
 
     dispatch(
       logIn({

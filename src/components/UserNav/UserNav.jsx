@@ -1,10 +1,10 @@
 import { logOut } from 'redux/Auth/auth-operations';
 import { useDispatch, useSelector } from 'react-redux';
 import pic from '../../images/user.jpg';
-import css from './HomeNav.module.css';
+import css from './UserNav.module.css';
 import { useNavigate } from 'react-router-dom';
 
-export const HomeNav = () => {
+export const UserNav = () => {
   const name = useSelector(state => state.auth.user.name);
   const dispatch = useDispatch();
   const navigate = useNavigate();

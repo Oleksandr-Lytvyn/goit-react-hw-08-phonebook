@@ -1,12 +1,15 @@
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { register } from 'redux/Auth/auth-operations';
 import css from './RegistrationForm.module.css';
 
 export const RegistrationForm = ({ isModal }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const onSubmit = event => {
     event.preventDefault();
-    isModal(false);
+    // isModal(false);
+    navigate('/');
     dispatch(
       register({
         name: event.target.name.value,
