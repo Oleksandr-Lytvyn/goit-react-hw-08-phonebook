@@ -7,7 +7,7 @@ import HomePage from 'pages/HomePage';
 import { Contacts } from 'pages/Contacts';
 import { LoginForm } from './LoginForm/LoginForm';
 import { RegistrationForm } from './RegistrationForm/RegistrationForm';
-import { PrivateRoute } from 'PrivateRoute';
+// import { PrivateRoute } from 'PrivateRoute';
 
 export const App = () => {
   const dispatch = useDispatch();
