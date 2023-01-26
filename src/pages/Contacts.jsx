@@ -14,7 +14,7 @@ export const Contacts = () => {
   return (
     <>
       <div>{isLoading && 'Request in progress...'}</div>
-      {!isLoading && <ContactList />}
+      <ContactList />
     </>
   );
 };
