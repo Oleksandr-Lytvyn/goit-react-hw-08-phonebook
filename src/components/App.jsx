@@ -7,7 +7,8 @@ import HomePage from 'pages/HomePage';
 import { Contacts } from 'pages/Contacts';
 import { LoginForm } from './LoginForm/LoginForm';
 import { RegistrationForm } from './RegistrationForm/RegistrationForm';
-// import { PrivateRoute } from 'PrivateRoute';
+import { PrivateRoute } from 'PrivateRoute';
+import { fetchContacts } from 'redux/operations';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -15,25 +16,26 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(refreshUser());
+    dispatch(fetchContacts());
   }, [dispatch]);
-  return (
-    !isRefreshing && (
-      <>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />}></Route>
-            <Route path="login" element={<LoginForm />}></Route>
-            <Route path="registration" element={<RegistrationForm />}></Route>
-            <Route path="/contacts" element={<Contacts />}></Route>
-            {/* <Route
-              path="/contacts"
-              element={
-                <PrivateRoute redirectTo="/login" component={<Contacts />} />
-              }
-            /> */}
-          </Route>
-        </Routes>
-      </>
-    )
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />}></Route>
+          <Route path="login" element={<LoginForm />}></Route>
+          <Route path="registration" element={<RegistrationForm />}></Route>
+          {/* <Route path="/contacts" element={<Contacts />}></Route> */}
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<Contacts />} />
+            }
+          />
+        </Route>
+      </Routes>
+    </>
   );
 };
