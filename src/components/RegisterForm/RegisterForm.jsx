@@ -1,21 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
-// import TextField from '@mui/material/TextField';
-// import Button from '@mui/material/Button';
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import { purple } from '@mui/material/colors';
-
-// const theme = createTheme({
-//   palette: {
-//     primary: {
-//       main: purple[500],
-//     },
-//     secondary: {
-//       main: '#fff',
-//     },
-//   },
-// });
+import css from '../LoginForm/LoginForm.module.css';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -36,7 +22,7 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
+    <form className={css.login_form} onSubmit={handleSubmit} autoComplete="off">
       <input
         name="name"
         required={true}

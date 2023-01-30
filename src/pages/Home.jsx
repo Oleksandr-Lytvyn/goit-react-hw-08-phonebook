@@ -24,14 +24,14 @@ export default function Home() {
     <div className={css.page_wrapper}>
       <h1>Phonebook</h1>
       <div className={css.auth_wrapper}>
-        <div className="auth_link">
-          {/* <p>Sign up </p> */}
-          <Link to={'register'}> Register </Link>
-        </div>
-        <div className="auth_link">
-          {/* <p>Log in</p> */}
-          <Link to={'login'}> Login </Link>
-        </div>
+        <Link className={css.auth_link} to={'register'}>
+          {' '}
+          Register{' '}
+        </Link>
+        <Link className={css.auth_link} to={'login'}>
+          {' '}
+          Login{' '}
+        </Link>
       </div>
     </div>
   );

@@ -2,20 +2,7 @@ import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import { purple } from '@mui/material/colors';
-// import Button from '@mui/material/Button';
-
-// const theme = createTheme({
-//   palette: {
-//     primary: {
-//       main: purple[500],
-//     },
-//     secondary: {
-//       main: '#fff',
-//     },
-//   },
-// });
+import css from './UserMenu.module.css';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -23,9 +10,10 @@ export const UserMenu = () => {
   const handleLogOut = () => dispatch(logOut());
 
   return (
-    <div>
-      <p>{user.email}</p>
+    <div className={css.user_menu}>
+      <p className={css.user_email}>{user.email}</p>
       <button
+        className={css.user_button}
         onClick={handleLogOut}
         size="small"
         variant="outlined"

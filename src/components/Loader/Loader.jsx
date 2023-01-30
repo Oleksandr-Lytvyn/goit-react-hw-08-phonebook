@@ -1,17 +1,17 @@
 import React from 'react';
-import { MagnifyingGlass } from 'react-loader-spinner';
+import { Rings } from 'react-loader-spinner';
 
 const MyLoader = props => (
- <MagnifyingGlass
-  visible={true}
-  height="80"
-  width="80"
-  ariaLabel="MagnifyingGlass-loading"
-  wrapperStyle={{}}
-  wrapperClass="MagnifyingGlass-wrapper"
-  glassColor = '#c0efff'
-  color = '#e15b64'
-/>
+  <Rings
+    height="80"
+    width="80"
+    color="#4fa94d"
+    radius="6"
+    wrapperStyle={{}}
+    wrapperClass=""
+    visible={true}
+    ariaLabel="rings-loading"
+  />
 );
 
 export default MyLoader;

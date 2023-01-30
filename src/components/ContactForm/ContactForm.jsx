@@ -5,6 +5,8 @@ import Notiflix from 'notiflix';
 import { addContact } from 'redux/contacts/contactsOperation';
 import { getContacts } from 'redux/contacts/selectors';
 
+import css from './ContactForm.module.css';
+
 export default function ContactForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -52,24 +54,24 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Name
         <input
           value={name}
           onChange={handleChange}
           type="text"
           name="name"
+          placeholder="Name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
       </label>
       <label>
-        Number
         <input
           value={phone}
           onChange={handleChange}
           type="tel"
           name="number"
+          placeholder="Number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required

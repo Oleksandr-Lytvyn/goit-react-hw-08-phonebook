@@ -6,7 +6,8 @@ import { getFilterValue, getContacts } from 'redux/contacts/selectors';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/contactsOperation';
 import { useEffect } from 'react';
-import { ContactListStyled } from './ContactList.styled';
+
+import css from './ContactList.module.css';
 
 export default function ContactList() {
   const dispatch = useDispatch();
@@ -23,9 +24,9 @@ export default function ContactList() {
   );
 
   return (
-    <ContactListStyled>
+    <div>
       {contacts.length > 0 && (
-        <ul>
+        <ul className={css.contacts_list}>
           {visibleContacts.map(({ id, name, number }) => (
             <ContactItem
               key={id}
@@ -36,6 +37,6 @@ export default function ContactList() {
           ))}
         </ul>
       )}
-    </ContactListStyled>
+    </div>
   );
 }
