@@ -3,7 +3,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeValue } from 'redux/contacts/filterSlice';
 import { getFilterValue } from 'redux/contacts/selectors';
-import { FilterStyled } from './Filter.styled';
 
 export default function Filter() {
   const filterValue = useSelector(getFilterValue);
