@@ -1,68 +1,41 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
+
+import ContactItem from 'components/ContactItem/ContactItem';
+import { getFilterValue, getContacts } from 'redux/contacts/selectors';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/operations';
-import { addFilter } from '../../redux/filterSlice';
-// import { useEffect } from 'react';
-// import { fetchContacts } from 'redux/operations';
-import { InputForm } from 'components/InputForm/InputForm';
-import css from './ContactList.module.css';
+import { fetchContacts } from 'redux/contacts/contactsOperation';
+import { useEffect } from 'react';
+import { ContactListStyled } from './ContactList.styled';
 
-export const ContactList = () => {
-  const cont = useSelector(state => state.contacts);
-  const fltr = useSelector(state => state.filter);
-  const isLoading = useSelector(state => state.contacts.isLoading);
-  const error = useSelector(state => state.contacts.error);
+export default function ContactList() {
   const dispatch = useDispatch();
+  const contacts = useSelector(getContacts);
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
-  const delCont = submit => {
-    dispatch(deleteContact(submit.target.id));
-  };
+  const filterValue = useSelector(getFilterValue);
 
-  const filteredContacts = cont.data.filter(cont =>
-    cont.name.toLowerCase().includes(fltr.toLowerCase())
+  const visibleContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filterValue)
   );
+
   return (
-    <>
-      <div className={css.contacts_section}>
-        <InputForm />
-        <div className={css.filter_section}>
-          <h2>filter</h2>
-          <input
-            type="text"
-            name="filter"
-            placeholder="search name"
-            onInput={event => {
-              dispatch(addFilter(event.target.value));
-            }}
-          />
-        </div>
-        {isLoading && <b>Loading contacts...</b>}
-        {filteredContacts.length === 0 && <b>No contacts...</b>}
-        {error && <b>{error}</b>}
-        <ul className={css.contacts_list}>
-          {filteredContacts.map(cont => (
-            <li key={cont.id} className={css.contacts_item}>
-              <span>
-                {cont.name}: {cont.number}
-              </span>
-              <button
-                id={cont.id}
-                className={css.btn_contact}
-                type="button"
-                onClick={submit => {
-                  delCont(submit);
-                }}
-              >
-                X
-              </button>
-            </li>
+    <ContactListStyled>
+      {contacts.length > 0 && (
+        <ul>
+          {visibleContacts.map(({ id, name, number }) => (
+            <ContactItem
+              key={id}
+              id={id}
+              name={name}
+              number={number}
+            ></ContactItem>
           ))}
         </ul>
-      </div>
-    </>
+      )}
+    </ContactListStyled>
   );
-};
+}

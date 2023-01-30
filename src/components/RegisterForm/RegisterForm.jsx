@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { logIn } from 'redux/auth/operations';
+import { register } from 'redux/auth/operations';
 
 // import TextField from '@mui/material/TextField';
 // import Button from '@mui/material/Button';
@@ -17,24 +17,31 @@ import { logIn } from 'redux/auth/operations';
 //   },
 // });
 
-export const LoginForm = () => {
+export const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
     dispatch(
-      logIn({
+      register({
+        name: form.elements.name.value,
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
     );
+    console.log(register);
 
     form.reset();
   };
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
+      <input
+        name="name"
+        required={true}
+        // label="Username"
+      />
       <input
         name="email"
         required={true}
@@ -48,7 +55,7 @@ export const LoginForm = () => {
       />
       {/* <ThemeProvider theme={theme}> */}
       <button type="submit" variant="outlined">
-        Log in
+        Register
       </button>
       {/* </ThemeProvider> */}
     </form>

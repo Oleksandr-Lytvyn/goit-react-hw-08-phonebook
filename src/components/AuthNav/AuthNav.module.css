@@ -1,9 +1,0 @@
-.buttons {
-  height: 50px;
-  display: flex;
-  gap: 30px;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: rgb(121, 176, 224);
-  padding: 10px 10px;
-}
