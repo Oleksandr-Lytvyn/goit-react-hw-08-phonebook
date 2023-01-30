@@ -15,7 +15,7 @@ export default function ContactItem({ id, name, number }) {
       <p>
         {name} {number}
       </p>
-      <button type="button" onClick={handleDelete}>
+      <button className={css.button_del} type="button" onClick={handleDelete}>
         Delete
       </button>
     </li>
