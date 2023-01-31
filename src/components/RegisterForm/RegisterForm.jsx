@@ -23,27 +23,17 @@ export const RegisterForm = () => {
 
   return (
     <form className={css.login_form} onSubmit={handleSubmit} autoComplete="off">
-      <input
-        name="name"
-        required={true}
-        // label="Username"
-      />
-      <input
-        name="email"
-        required={true}
-        // label="Email"
-      />
+      <input name="name" required={true} placeholder="name" />
+      <input name="email" required={true} placeholder="email" />
       <input
         name="password"
         required={true}
         type="password"
-        // label="Password"
+        placeholder="password"
       />
-      {/* <ThemeProvider theme={theme}> */}
       <button type="submit" variant="outlined">
         Register
       </button>
-      {/* </ThemeProvider> */}
     </form>
   );
 };

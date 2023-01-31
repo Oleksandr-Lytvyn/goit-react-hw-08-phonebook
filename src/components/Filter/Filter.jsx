@@ -13,7 +13,6 @@ export default function Filter() {
 
   return (
     <label className={css.filter_input}>
-      {/* Find contact by name */}
       <input
         type="text"
         value={filterValue}

@@ -20,7 +20,7 @@ export default function ContactList() {
   const filterValue = useSelector(getFilterValue);
 
   const visibleContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filterValue)
+    contact.name.toLowerCase().includes(filterValue.toLowerCase())
   );
 
   return (

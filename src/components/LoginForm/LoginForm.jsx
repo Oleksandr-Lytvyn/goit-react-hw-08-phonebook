@@ -21,22 +21,16 @@ export const LoginForm = () => {
 
   return (
     <form className={css.login_form} onSubmit={handleSubmit} autoComplete="off">
-      <input
-        name="email"
-        required={true}
-        // label="Email"
-      />
+      <input name="email" required={true} placeholder="email" />
       <input
         name="password"
         required={true}
         type="password"
-        // label="Password"
+        placeholder="password"
       />
-      {/* <ThemeProvider theme={theme}> */}
       <button type="submit" variant="outlined">
         Log in
       </button>
-      {/* </ThemeProvider> */}
     </form>
   );
 };
