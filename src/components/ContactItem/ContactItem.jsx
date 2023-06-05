@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { useDispatch } from 'react-redux';
+import { fetchContacts } from 'redux/contacts/contactsOperation';
 import { deleteContact } from 'redux/contacts/contactsOperation';
 
 import css from './ContactItem.module.css';
@@ -9,7 +10,10 @@ import css from './ContactItem.module.css';
 export default function ContactItem({ _id, name, phone }) {
   const dispatch = useDispatch();
 
-  const handleDelete = () => dispatch(deleteContact(_id));
+  const handleDelete = () => {
+    dispatch(deleteContact(_id));
+    dispatch(fetchContacts());
+  };
   return (
     <li className={css.contact_item}>
       <p>
