@@ -6,6 +6,7 @@ import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivatePoute';
+import VerifyEmail from 'pages/VerifyEmail';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -50,6 +51,7 @@ function App() {
             }
           />
         </Route>
+        <Route path="/verify" element={<VerifyEmail />} />
       </Routes>
     )
   );
