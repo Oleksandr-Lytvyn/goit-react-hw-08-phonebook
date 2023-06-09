@@ -11,7 +11,7 @@ export const AppBar = () => {
   return (
     <header>
       <div className={css.wrapper}>
-        <Navigation />
+        {/* <Navigation /> */}
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </div>
     </header>
