@@ -7,7 +7,7 @@ import { getContacts } from 'redux/contacts/selectors';
 
 import css from './ContactForm.module.css';
 
-export default function ContactForm() {
+export default function ContactForm({ setIsModal }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -48,6 +48,7 @@ export default function ContactForm() {
       return Notiflix.Notify.info(`${name} is already in contacts`);
     }
     dispatch(addContact({ name, email, phone }));
+    setIsModal(false);
     reset();
   };
 

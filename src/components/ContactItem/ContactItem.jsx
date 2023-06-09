@@ -12,7 +12,6 @@ export default function ContactItem({ _id, name, phone }) {
 
   const handleDelete = () => {
     dispatch(deleteContact(_id));
-    dispatch(fetchContacts());
   };
   return (
     <li className={css.contact_item}>

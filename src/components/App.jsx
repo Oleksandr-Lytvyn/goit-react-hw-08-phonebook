@@ -47,7 +47,7 @@ function App() {
           element={<PrivateRoute component={<Layout />} />}
           className="container"
         >
-          <Route index element={<HomePage />} />
+          <Route index element={<ContactsPage />} />
 
           <Route
             path="/new"
