@@ -7,7 +7,7 @@ import { useAuth } from 'hooks';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivatePoute';
 import VerifyEmail from 'pages/VerifyEmail';
-import Welcome from 'pages/Welcome';
+import WelcomePage from 'pages/WelcomePage';
 import Register from 'pages/Register';
 import Login from 'pages/Login';
 
@@ -29,7 +29,7 @@ function App() {
       <Routes>
         <Route
           path="/welcome"
-          element={<RestrictedRoute component={<Welcome />} />}
+          element={<RestrictedRoute component={<WelcomePage />} />}
         />
         <Route
           path="/register"
