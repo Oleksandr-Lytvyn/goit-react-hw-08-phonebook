@@ -27,12 +27,12 @@ export default function ContactList() {
     <div>
       {contacts.length > 0 && (
         <ul className={css.contacts_list}>
-          {visibleContacts.map(({ id, name, number }) => (
+          {visibleContacts.map(({ _id, name, phone }) => (
             <ContactItem
-              key={id}
-              id={id}
+              key={_id}
+              _id={_id}
               name={name}
-              number={number}
+              phone={phone}
             ></ContactItem>
           ))}
         </ul>

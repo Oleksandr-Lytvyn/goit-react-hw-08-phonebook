@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 
 import css from './LoginForm.module.css';
+import { BackButton } from 'components/BackButton/BackButton';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ export const LoginForm = () => {
       <button type="submit" variant="outlined">
         Log in
       </button>
+      <BackButton />
     </form>
   );
 };
