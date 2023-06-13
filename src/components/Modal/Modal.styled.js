@@ -18,13 +18,15 @@ export const Backdrop = styled.div`
 `;
 
 export const Window = styled.div`
+  position: relative;
+
   background: #fff;
   margin: auto;
   flex-shrink: 0;
 
   /* Установим по умолчанию ширину 600px
     но она будет не больше ширины браузера */
-  width: 600px;
+  width: 400px;
   max-width: 100%;
 
   /* Заготовка для будущих анимаций */

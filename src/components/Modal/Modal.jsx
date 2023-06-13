@@ -1,19 +1,38 @@
 import ReactDOM from 'react-dom';
 import { Backdrop, BackdropShadow, Window } from './Modal.styled';
+import {
+  ButtonCloseModal,
+  ButtonStyled,
+} from 'components/Button/Button.styled';
 
-export const Modal = ({ children, setIsModal }) => {
+import sprite from '../../images/sprite.svg';
+import { useDispatch } from 'react-redux';
+
+import { toggleModal } from 'redux/modal/modalSlice';
+
+export const Modal = ({ children }) => {
+  const dispatch = useDispatch();
   return ReactDOM.createPortal(
     <>
       <Backdrop>
-        <Window>modal window{children}</Window>
-        <button
+        <Window>
+          {children}
+          <div
+            onClick={() => {
+              dispatch(toggleModal());
+            }}
+          >
+            close
+          </div>
+        </Window>
+        {/* <button
           type="button"
           onClick={() => {
             setIsModal(false);
           }}
         >
           X
-        </button>
+        </button> */}
       </Backdrop>
       <BackdropShadow />
     </>,

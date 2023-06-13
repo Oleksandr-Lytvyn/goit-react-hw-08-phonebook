@@ -8,10 +8,10 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivatePoute';
 import VerifyEmail from 'pages/VerifyEmail';
 import WelcomePage from 'pages/WelcomePage';
-import Register from 'pages/Register';
-import Login from 'pages/Login';
+import RegisterPage from 'pages/RegisterPage';
+import LoginPage from 'pages/LoginPage';
 
-const HomePage = lazy(() => import('../pages/Home'));
+// const HomePage = lazy(() => import('../pages/Home'));
 // const RegisterPage = lazy(() => import('../pages/Register'));
 // const LoginPage = lazy(() => import('../pages/Login'));
 const ContactsPage = lazy(() => import('../pages/Contacts'));
@@ -34,12 +34,15 @@ function App() {
         <Route
           path="/register"
           element={
-            <RestrictedRoute component={<Register />} redirectTo="/verify" />
+            <RestrictedRoute
+              component={<RegisterPage />}
+              redirectTo="/verify"
+            />
           }
         />
         <Route
           path="/login"
-          element={<RestrictedRoute component={<Login />} />}
+          element={<RestrictedRoute component={<LoginPage />} />}
         />
 
         <Route

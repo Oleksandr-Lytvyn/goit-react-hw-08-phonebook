@@ -3,6 +3,7 @@ import { register } from 'redux/auth/operations';
 
 import css from '../LoginForm/LoginForm.module.css';
 import { BackButton } from 'components/BackButton/BackButton';
+import { Button } from 'components/Button/Button';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -31,10 +32,10 @@ export const RegisterForm = () => {
         type="password"
         placeholder="password"
       />
-      <button type="submit" variant="outlined">
+      <Button type="submit" variant="outlined">
         Register
-      </button>
-      <BackButton />
+      </Button>
+      {/* <BackButton /> */}
     </form>
   );
 };

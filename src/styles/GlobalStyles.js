@@ -43,7 +43,7 @@ h1 {
 button {
   border: none;
   margin: 0;
-  padding: 0;
+  /* padding: 5px 5px; */
    cursor: pointer;
 }
 
@@ -55,5 +55,9 @@ img {
 }
 input {
   all: unset;
+  border-bottom: 1px solid black;
+}
+a {
+  color: #303030;
 }
 `;

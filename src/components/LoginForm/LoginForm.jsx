@@ -3,6 +3,7 @@ import { logIn } from 'redux/auth/operations';
 
 import css from './LoginForm.module.css';
 import { BackButton } from 'components/BackButton/BackButton';
+import { Button } from 'components/Button/Button';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -29,10 +30,9 @@ export const LoginForm = () => {
         type="password"
         placeholder="password"
       />
-      <button type="submit" variant="outlined">
+      <Button type="submit" variant="outlined">
         Log in
-      </button>
-      <BackButton />
+      </Button>
     </form>
   );
 };
