@@ -8,6 +8,12 @@ import { fetchContacts } from 'redux/contacts/contactsOperation';
 import { useEffect } from 'react';
 
 import css from './ContactList.module.css';
+import styled from 'styled-components';
+
+const Box = styled.div`
+  flex-grow: 2;
+  background-color: #e3ebf9;
+`;
 
 export default function ContactList() {
   const dispatch = useDispatch();
@@ -24,9 +30,9 @@ export default function ContactList() {
   );
 
   return (
-    <div>
+    <Box>
       {contacts.length > 0 && (
-        <ul className={css.contacts_list}>
+        <ul>
           {visibleContacts.map(({ _id, name, phone }) => (
             <ContactItem
               key={_id}
@@ -37,6 +43,6 @@ export default function ContactList() {
           ))}
         </ul>
       )}
-    </div>
+    </Box>
   );
 }

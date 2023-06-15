@@ -10,29 +10,29 @@ import { useDispatch } from 'react-redux';
 
 import { toggleModal } from 'redux/modal/modalSlice';
 
-export const Modal = ({ children }) => {
+export const Modal = ({ children, setIsModal }) => {
   const dispatch = useDispatch();
   return ReactDOM.createPortal(
     <>
       <Backdrop>
         <Window>
           {children}
-          <div
+          {/* <div
             onClick={() => {
               dispatch(toggleModal());
             }}
           >
             close
-          </div>
+          </div> */}
+          <button
+            type="button"
+            onClick={() => {
+              setIsModal(false);
+            }}
+          >
+            X
+          </button>
         </Window>
-        {/* <button
-          type="button"
-          onClick={() => {
-            setIsModal(false);
-          }}
-        >
-          X
-        </button> */}
       </Backdrop>
       <BackdropShadow />
     </>,

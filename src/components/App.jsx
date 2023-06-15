@@ -10,11 +10,12 @@ import VerifyEmail from 'pages/VerifyEmail';
 import WelcomePage from 'pages/WelcomePage';
 import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
+import ContactPage from 'pages/ContactPage';
 
 // const HomePage = lazy(() => import('../pages/Home'));
 // const RegisterPage = lazy(() => import('../pages/Register'));
 // const LoginPage = lazy(() => import('../pages/Login'));
-const ContactsPage = lazy(() => import('../pages/Contacts'));
+// const ContactsPage = lazy(() => import('../pages/ContactsPage'));
 
 function App() {
   const dispatch = useDispatch();
@@ -50,12 +51,12 @@ function App() {
           element={<PrivateRoute component={<Layout />} />}
           className="container"
         >
-          <Route index element={<ContactsPage />} />
+          <Route index element={<ContactPage />} />
 
           <Route
             path="/new"
             element={
-              <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
+              <PrivateRoute component={<ContactPage />} redirectTo="/login" />
             }
           />
         </Route>
