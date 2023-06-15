@@ -5,5 +5,9 @@ const Box = styled.div`
 `;
 
 export const ContactInfo = () => {
-  return <Box>contact information</Box>;
+  return (
+    <Box>
+      <h3>contact information</h3>
+    </Box>
+  );
 };

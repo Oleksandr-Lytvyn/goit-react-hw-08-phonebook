@@ -4,6 +4,8 @@ import MyLoader from 'components/Loader/Loader';
 import { useSelector } from 'react-redux';
 import { ContactInfo } from 'components/ContactInfo/ContactInfo';
 import ContactList from 'components/ContactList/ContactList';
+import { Header } from './ContactsSection.styled';
+import { Button } from 'components/Button/Button';
 
 const Box = styled.section`
   display: flex;
@@ -30,15 +32,15 @@ export const ContactSection = ({ setIsModal }) => {
   return (
     <Section>
       <Topline>
-        <h1>contacts</h1>
-        <button
+        <Header>Contacts</Header>
+        <Button
           type="button"
           onClick={() => {
             setIsModal(true);
           }}
         >
-          add new contact
-        </button>
+          new contact
+        </Button>
       </Topline>
 
       <Filter />

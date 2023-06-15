@@ -3,7 +3,6 @@ import { UserMenu } from 'components/UserMenu/UserMenu';
 import css from './AppBar.module.css';
 
 import { useAuth } from 'hooks';
-import { ContactInfo } from 'components/ContactInfo/ContactInfo';
 
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
