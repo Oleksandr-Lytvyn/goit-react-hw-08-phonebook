@@ -1,8 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
-import css from '../LoginForm/LoginForm.module.css';
-import { BackButton } from 'components/BackButton/BackButton';
 import { Button } from 'components/Button/Button';
 import { LoginFormStyled } from 'components/LoginForm/LoginForm.styled';
 
