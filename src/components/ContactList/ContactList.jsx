@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 
 import ContactItem from 'components/ContactItem/ContactItem';
@@ -7,15 +6,20 @@ import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/contactsOperation';
 import { useEffect } from 'react';
 
-import css from './ContactList.module.css';
 import styled from 'styled-components';
 
 const Box = styled.div`
   flex-grow: 2;
-  background-color: #e3ebf9;
 `;
 
-export default function ContactList() {
+const ListStyled = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* padding: 10px; */
+`;
+
+export default function ContactList({ onClick }) {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
 
@@ -29,19 +33,25 @@ export default function ContactList() {
     contact.name.toLowerCase().includes(filterValue.toLowerCase())
   );
 
+  // const onClick = event => {
+  //   console.log(event);
+  // };
+
   return (
     <Box>
       {contacts.length > 0 && (
-        <ul>
-          {visibleContacts.map(({ _id, name, phone }) => (
+        <ListStyled>
+          {visibleContacts.map(({ _id, name, phone, email }) => (
             <ContactItem
               key={_id}
               _id={_id}
               name={name}
               phone={phone}
+              email={email}
+              onClick={onClick}
             ></ContactItem>
           ))}
-        </ul>
+        </ListStyled>
       )}
     </Box>
   );

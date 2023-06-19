@@ -5,8 +5,17 @@ import { WelcomeSection } from 'components/Welcome/Welcome.styled';
 export default function Login() {
   return (
     <WelcomeSection>
-      <LoginForm />
-      <BackButton />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '40px',
+        }}
+      >
+        <LoginForm />
+        <BackButton />
+      </div>
     </WelcomeSection>
   );
 }

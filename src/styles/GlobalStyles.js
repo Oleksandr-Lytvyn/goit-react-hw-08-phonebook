@@ -3,11 +3,12 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
 body {
-  margin: 0;
+  margin: 0 auto;
   position: relative;
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
   background-color: ${p => p.theme.colors.bgMain};
+  max-width: 768px;
 }
 
 code {
@@ -37,6 +38,10 @@ h6
   margin: 0;
   padding: 0;
 }
+
+p {font-family: 'Inter';
+  margin: 0;
+  padding: 0;}
 
 h1 {
   text-transform: uppercase;

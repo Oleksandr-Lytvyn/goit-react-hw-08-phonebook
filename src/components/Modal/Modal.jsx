@@ -1,9 +1,6 @@
 import ReactDOM from 'react-dom';
 import { Backdrop, BackdropShadow, Window } from './Modal.styled';
-import {
-  ButtonCloseModal,
-  ButtonStyled,
-} from 'components/Button/Button.styled';
+import { ButtonCloseModal } from './Modal.styled';
 
 import sprite from '../../images/sprite.svg';
 import { useDispatch } from 'react-redux';
@@ -16,22 +13,16 @@ export const Modal = ({ children, setIsModal }) => {
     <>
       <Backdrop>
         <Window>
-          {children}
-          {/* <div
-            onClick={() => {
-              dispatch(toggleModal());
-            }}
-          >
-            close
-          </div> */}
-          <button
+          <ButtonCloseModal
             type="button"
             onClick={() => {
               setIsModal(false);
             }}
           >
+            {' '}
             X
-          </button>
+          </ButtonCloseModal>
+          {children}
         </Window>
       </Backdrop>
       <BackdropShadow />

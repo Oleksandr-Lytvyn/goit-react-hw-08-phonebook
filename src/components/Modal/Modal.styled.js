@@ -23,6 +23,7 @@ export const Window = styled.div`
   background: #fff;
   margin: auto;
   flex-shrink: 0;
+  border-radius: 15px;
 
   /* Установим по умолчанию ширину 600px
     но она будет не больше ширины браузера */
@@ -52,4 +53,11 @@ export const BackdropShadow = styled.div`
 
   pointer-events: auto;
   opacity: 0.6;
+`;
+
+export const ButtonCloseModal = styled.button`
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: transparent;
 `;
