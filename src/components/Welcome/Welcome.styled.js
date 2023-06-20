@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import imgBg from '../../images/Welcome-bg.jpg';
 
 export const WelcomeSection = styled.section`
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
   background-image: linear-gradient(
       180deg,
@@ -22,4 +22,5 @@ export const WelcomeBox = styled.div`
   align-items: center;
   justify-content: center;
   gap: 30px;
+  margin: 0 auto;
 `;
