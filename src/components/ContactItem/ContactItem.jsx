@@ -20,8 +20,10 @@ export default function ContactItem({ _id, name, phone, email, onClick }) {
         onClick({ name, phone, email });
       }}
     >
-      <p>{name}</p>
-      <p>{phone}</p>
+      <div>
+        <p>{name}</p>
+        <p>{phone}</p>
+      </div>
       <button
         type="button"
         style={{ backgroundColor: 'transparent', padding: '0' }}
