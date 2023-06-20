@@ -1,5 +1,8 @@
 .user_menu {
   /* background-color: azure; */
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 .user_button {
   margin-top: 5px;

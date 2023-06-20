@@ -1,3 +1,4 @@
+import { Button } from 'components/Button/Button';
 import { useNavigate } from 'react-router-dom';
 
 export const BackButton = () => {
@@ -6,8 +7,8 @@ export const BackButton = () => {
     navigate('/welcome', { replace: true });
   };
   return (
-    <button type="button" onClick={onClick}>
+    <Button type="button" onClick={onClick}>
       go back
-    </button>
+    </Button>
   );
 };

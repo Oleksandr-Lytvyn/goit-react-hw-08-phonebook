@@ -18,13 +18,16 @@ export const Backdrop = styled.div`
 `;
 
 export const Window = styled.div`
+  position: relative;
+
   background: #fff;
   margin: auto;
   flex-shrink: 0;
+  border-radius: 15px;
 
   /* Установим по умолчанию ширину 600px
     но она будет не больше ширины браузера */
-  width: 600px;
+  width: 400px;
   max-width: 100%;
 
   /* Заготовка для будущих анимаций */
@@ -50,4 +53,11 @@ export const BackdropShadow = styled.div`
 
   pointer-events: auto;
   opacity: 0.6;
+`;
+
+export const ButtonCloseModal = styled.button`
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: transparent;
 `;

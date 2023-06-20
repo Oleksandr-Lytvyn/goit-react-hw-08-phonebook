@@ -2,26 +2,36 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { useDispatch } from 'react-redux';
-import { fetchContacts } from 'redux/contacts/contactsOperation';
 import { deleteContact } from 'redux/contacts/contactsOperation';
 
-import css from './ContactItem.module.css';
+import { DeleteItemSvg, ItemStyled } from './ContactItem.styled';
 
-export default function ContactItem({ _id, name, phone }) {
+import svgSprite from '../../images/sprite.svg';
+
+export default function ContactItem({ _id, name, phone, email, onClick }) {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
     dispatch(deleteContact(_id));
   };
   return (
-    <li className={css.contact_item}>
-      <p>
-        {name} {phone}
-      </p>
-      <button className={css.button_del} type="button" onClick={handleDelete}>
-        Delete
+    <ItemStyled
+      onClick={() => {
+        onClick({ name, phone, email });
+      }}
+    >
+      <p>{name}</p>
+      <p>{phone}</p>
+      <button
+        type="button"
+        style={{ backgroundColor: 'transparent', padding: '0' }}
+        onClick={handleDelete}
+      >
+        <DeleteItemSvg style={{}}>
+          <use href={`${svgSprite}#icon-new-contact`}></use>
+        </DeleteItemSvg>
       </button>
-    </li>
+    </ItemStyled>
   );
 }
 ContactItem.propTypes = {

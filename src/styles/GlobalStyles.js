@@ -3,11 +3,12 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
 body {
-  margin: 0;
+  margin: 0 auto;
   position: relative;
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
   background-color: ${p => p.theme.colors.bgMain};
+  max-width: 768px;
 }
 
 code {
@@ -18,6 +19,7 @@ code {
 ul {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
 a {
@@ -30,11 +32,16 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6
+ {
+  font-family: 'Jua';
   margin: 0;
   padding: 0;
 }
+
+p {font-family: 'Inter';
+  margin: 0;
+  padding: 0;}
 
 h1 {
   text-transform: uppercase;
@@ -43,7 +50,7 @@ h1 {
 button {
   border: none;
   margin: 0;
-  padding: 0;
+  /* padding: 5px 5px; */
    cursor: pointer;
 }
 
@@ -55,5 +62,9 @@ img {
 }
 input {
   all: unset;
+  border-bottom: 1px solid black;
+}
+a {
+  color: #303030;
 }
 `;
