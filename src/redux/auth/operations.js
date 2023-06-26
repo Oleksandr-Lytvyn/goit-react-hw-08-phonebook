@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://nodejs-homework-2-6.onrender.com/api';
-// axios.defaults.baseURL = 'http://localhost:3000/api';
+// axios.defaults.baseURL = 'https://nodejs-homework-2-6.onrender.com/api';
+axios.defaults.baseURL = 'http://localhost:3000/api';
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -62,6 +62,22 @@ export const refreshUser = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
       const res = await axios.get('/users/current');
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const setAvatar = createAsyncThunk(
+  '/users/avatars',
+  async (file, thunkAPI) => {
+    let formData = new FormData();
+    formData.append('avatar', file);
+    try {
+      const res = await axios.patch('/users/avatars', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

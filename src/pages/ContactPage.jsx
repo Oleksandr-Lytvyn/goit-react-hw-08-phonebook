@@ -11,6 +11,9 @@ export default function ContactPage() {
       {/* <div className={css.page_wrapper}> */}
       {isModal && (
         <Modal setIsModal={setIsModal}>
+          <h2 style={{ textAlign: 'center', marginTop: '10px' }}>
+            new contact
+          </h2>
           <ContactForm setIsModal={setIsModal} />
         </Modal>
       )}
