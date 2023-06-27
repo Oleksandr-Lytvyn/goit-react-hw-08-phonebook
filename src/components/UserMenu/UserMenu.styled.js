@@ -20,3 +20,10 @@ export const LogoutButton = styled.button`
   margin-top: 5px;
   fill: #2681ed;
 `;
+
+export const ImageAvatar = styled.img`
+  &:hover,
+  :focus {
+    cursor: pointer;
+  }
+`;

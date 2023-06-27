@@ -6,9 +6,10 @@ import { setAvatar } from 'redux/auth/operations';
 import defaultAva from '../../images/contact.png';
 
 export const Avatar = ({ setIsModal }) => {
-  const { user } = useAuth();
+  const {
+    user: { avatarURL },
+  } = useAuth();
   const dispatch = useDispatch();
-  //   console.log(user.avatarURL);
   const [prew, setPrew] = useState('');
   const [file, setFile] = useState('');
 
@@ -31,17 +32,13 @@ export const Avatar = ({ setIsModal }) => {
     setIsModal(false);
   };
 
-  console.log(prew === true);
-  console.log(user.avatarURL);
-  console.log(defaultAva);
-
   return (
     <>
       {' '}
       <form>
         <label htmlFor="avatar">
           <img
-            src={prew || user.avatarURL || defaultAva}
+            src={prew || avatarURL || defaultAva}
             alt="user avatar"
             style={{
               width: '90px',

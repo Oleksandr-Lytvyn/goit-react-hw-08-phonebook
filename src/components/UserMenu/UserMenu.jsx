@@ -3,7 +3,12 @@ import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 
 import css from './UserMenu.module.css';
-import { LogoutButton, UserMenuBox, UserProfile } from './UserMenu.styled';
+import {
+  ImageAvatar,
+  LogoutButton,
+  UserMenuBox,
+  UserProfile,
+} from './UserMenu.styled';
 
 import svgSprite from '../../images/sprite.svg';
 import { useState } from 'react';
@@ -28,8 +33,8 @@ export const UserMenu = () => {
       <UserMenuBox>
         <UserProfile>
           <p className={css.user_email}>{user.email}</p>
-          <img
-            src={`https://nodejs-homework-2-6.onrender.com/${user.avatarURL}`}
+          <ImageAvatar
+            src={user.avatarURL}
             style={{ width: '30px', height: '30px', borderRadius: '50%' }}
             alt="avatar"
             onClick={() => {

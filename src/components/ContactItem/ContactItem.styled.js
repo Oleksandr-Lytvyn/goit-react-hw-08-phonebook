@@ -8,6 +8,11 @@ export const ItemStyled = styled.li`
   align-items: center;
   border: 1px solid #d6d6d6;
   border-radius: 10px;
+  &:hover,
+  :focus {
+    cursor: pointer;
+    background-color: #f3f3f3;
+  }
 `;
 
 export const DeleteItemSvg = styled.svg`
@@ -16,4 +21,9 @@ export const DeleteItemSvg = styled.svg`
   background-color: transparent;
   transform: rotate(45deg);
   fill: #b47465;
+  transition: transform, 200ms;
+  &&:hover,
+  :focus {
+    transform: rotate(-45deg);
+  }
 `;
