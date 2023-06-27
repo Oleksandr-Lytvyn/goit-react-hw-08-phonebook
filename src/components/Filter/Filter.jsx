@@ -5,6 +5,7 @@ import { changeValue } from 'redux/contacts/filterSlice';
 import { getFilterValue } from 'redux/contacts/selectors';
 
 import css from './Filter.module.css';
+import { FilterInput, FilterLabel } from './Filter.styled';
 
 export default function Filter() {
   const filterValue = useSelector(getFilterValue);
@@ -12,13 +13,13 @@ export default function Filter() {
   const dispatch = useDispatch();
 
   return (
-    <label className={css.filter_input}>
-      <input
+    <FilterLabel className={css.filter_input}>
+      <FilterInput
         type="text"
         value={filterValue}
         placeholder="Find contact by name"
         onChange={e => dispatch(changeValue(e.target.value))}
       />
-    </label>
+    </FilterLabel>
   );
 }
