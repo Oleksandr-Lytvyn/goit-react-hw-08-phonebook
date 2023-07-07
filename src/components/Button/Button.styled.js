@@ -6,6 +6,10 @@ export const ButtonStyled = styled.button`
   height: 40px;
   border-radius: 5px;
   background-color: #55c875;
+  &&:hover,
+  :focus {
+    background-color: #84e09d;
+  }
 `;
 export const ButtonCloseModal = styled(ButtonStyled)`
   position: absolute;
