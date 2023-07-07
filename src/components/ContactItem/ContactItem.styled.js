@@ -20,10 +20,11 @@ export const DeleteItemSvg = styled.svg`
   height: 22px;
   background-color: transparent;
   transform: rotate(45deg);
-  fill: #b47465;
-  transition: transform, 200ms;
+  fill: #000000;
+  transition: fill 200ms, transform 200ms;
   &&:hover,
   :focus {
     transform: rotate(-45deg);
+    fill: #fa6c6c;
   }
 `;
