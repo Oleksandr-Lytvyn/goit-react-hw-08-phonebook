@@ -6,10 +6,11 @@ import { useSelector } from 'react-redux';
 
 export default function Login() {
   const isLoading = useSelector(state => state.auth.isLoading);
-  console.log(isLoading);
+  const error = useSelector(state => state.auth.errorMessage);
   return (
     <>
       {isLoading && <MyLoader />}
+      {error && <div>{error}</div>}
 
       <WelcomeSection>
         <div
