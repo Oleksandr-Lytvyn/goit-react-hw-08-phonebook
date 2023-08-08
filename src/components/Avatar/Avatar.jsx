@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { setAvatar } from 'redux/auth/operations';
 
 import defaultAva from '../../images/contact.png';
+import { ButtonStyled } from 'components/Button/Button.styled';
 
 export const Avatar = ({ setIsModal }) => {
   const {
@@ -34,31 +35,33 @@ export const Avatar = ({ setIsModal }) => {
 
   return (
     <>
-      {' '}
-      <form>
-        <label htmlFor="avatar">
-          <img
-            src={prew || avatarURL || defaultAva}
-            alt="user avatar"
-            style={{
-              width: '90px',
-              height: '90px',
-              borderRadius: '50%',
-              margin: '0 auto',
-            }}
+      <div>
+        {' '}
+        <form>
+          <label htmlFor="avatar">
+            <img
+              src={prew || avatarURL || defaultAva}
+              alt="user avatar"
+              style={{
+                width: '90px',
+                height: '90px',
+                borderRadius: '50%',
+                margin: '0 auto',
+              }}
+            />
+          </label>
+          <input
+            name="avatar"
+            id="avatar"
+            type="file"
+            onChange={uploadFile}
+            style={{ display: 'none' }}
           />
-        </label>
-        <input
-          name="avatar"
-          id="avatar"
-          type="file"
-          onChange={uploadFile}
-          style={{ display: 'none' }}
-        />
-      </form>
-      <button type="submit" onClick={sendFile}>
-        change avatar
-      </button>
+        </form>
+        <ButtonStyled type="submit" onClick={sendFile}>
+          change avatar
+        </ButtonStyled>
+      </div>
     </>
   );
 };

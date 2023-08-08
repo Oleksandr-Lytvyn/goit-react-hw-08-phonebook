@@ -3,6 +3,7 @@ import MyLoader from 'components/Loader/Loader';
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 import { WelcomeSection } from 'components/Welcome/Welcome.styled';
 import { useSelector } from 'react-redux';
+import Notiflix from 'notiflix';
 
 export default function RegisterPage() {
   const isLoading = useSelector(state => state.auth.isLoading);
@@ -10,7 +11,7 @@ export default function RegisterPage() {
   return (
     <>
       {isLoading && <MyLoader />}
-      {error && <div>{error}</div>}
+      {error && Notiflix.Notify.failure(error)}
       <WelcomeSection>
         <div
           style={{
