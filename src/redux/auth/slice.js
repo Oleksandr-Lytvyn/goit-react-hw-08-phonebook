@@ -7,6 +7,7 @@ const initialState = {
   isLoggedIn: false,
   isRefreshing: false,
   isLoading: false,
+  errorMessage: '',
 };
 
 const authSlice = createSlice({
@@ -23,6 +24,10 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
         state.isLoading = false;
       })
+      .addCase(register.rejected, (state, action) => {
+        state.isLoading = false;
+        state.errorMessage = 'this email already';
+      })
       .addCase(logIn.pending, (state, action) => {
         state.isLoading = true;
       })
@@ -31,6 +36,10 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
         state.isLoading = false;
+      })
+      .addCase(logIn.rejected, (state, action) => {
+        state.isLoading = false;
+        state.errorMessage = 'wrong login or password';
       })
       .addCase(logOut.pending, (state, action) => {
         state.isLoading = true;

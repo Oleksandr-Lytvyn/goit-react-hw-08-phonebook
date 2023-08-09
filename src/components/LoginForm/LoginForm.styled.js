@@ -10,3 +10,7 @@ export const LoginFormStyled = styled.form`
   align-items: center;
   margin: 0 auto;
 `;
+
+export const InputStyled = styled.input`
+  border-color: ${props => props.color};
+`;
